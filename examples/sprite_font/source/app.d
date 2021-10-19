@@ -1,6 +1,6 @@
 /// Simple demonstation of writing text to the screen with a custom sprite font.
 ///
-/// Raylib is capable loading fonts from a variety of formats, image files being one
+/// Raylib is capable of loading fonts from a variety of formats, image files being one
 /// of them but with some precautions:
 /// - The rectangles that define the separators for each character must have the __same pixel
 /// siz in both width and height__.

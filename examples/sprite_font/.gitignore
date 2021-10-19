@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/sprite_font
+sprite_font.so
+sprite_font.dylib
+sprite_font.dll
+sprite_font.a
+sprite_font.lib
+sprite_font-test-*
+*.exe
+*.o
+*.obj
+*.lst

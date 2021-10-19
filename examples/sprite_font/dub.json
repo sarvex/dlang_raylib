@@ -1,0 +1,15 @@
+{
+	"authors": [
+		"rc-05"
+	],
+	"copyright": "Copyright © 2021, rc-05",
+	"description": "Demonstration on loading and using a sprite font.",
+	"dependencies": {
+		"dlang_raylib": {
+			"path": "../../",
+			"version": ""
+		}
+	},
+	"license": "MPL-2.0",
+	"name": "sprite_font"
+}

@@ -1,0 +1,6 @@
+import raylib;
+
+
+void main()
+{
+}

@@ -23,9 +23,8 @@ void main()
         ClearBackground(Colors.RAYWHITE);
 
         DrawTextEx(spriteFont, "This is an example in using a customized font that follows the",
-                Vector2(0.0, 0.0), 8.0, 0.0, Colors.BLACK);
-        DrawTextEx(spriteFont, "XNA spritefont convention.", Vector2(0.0, 8.0),
-                8.0, 0.0, Colors.BLACK);
+                Vector2(0, 0), 8, 0, Colors.BLACK);
+        DrawTextEx(spriteFont, "XNA spritefont convention.", Vector2(0, 8), 8, 0, Colors.BLACK);
 
         EndDrawing();
     }

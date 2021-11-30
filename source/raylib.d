@@ -34,7 +34,7 @@ enum Colors
     BLACK = Color(0, 0, 0, 255),
     BLANK = Color(0, 0, 0, 0),
     MAGENTA = Color(255,
-            0, 255, 255),
+        0, 255, 255),
     RAYWHITE = Color(245, 245, 245, 255),
 }
 
@@ -1124,6 +1124,7 @@ int GetCharPressed();
 /// Check if a gamepad is available
 bool IsGamepadAvailable(int gamepad);
 /// Check gamepad name (if available)
+/// Deprecated: Removed from Raylib `4.0.0`
 bool IsGamepadName(int gamepad, const(char*) name);
 /// Get gamepad internal name id
 const(char*) GetGamepadName(int gamepad);
@@ -1219,7 +1220,7 @@ void SetCameraAltControl(int keyAlt);
 void SetCameraSmoothZoomControl(int keySmoothZoom);
 /// Set camera move controls (1st person and 3rd person cameras)
 void SetCameraMoveControls(int keyFront, int keyBack, int keyRight, int keyLeft,
-        int keyUp, int keyDown);
+    int keyUp, int keyDown);
 
 //------------------------------------------------------------------------------------
 // Basic Shapes Drawing Functions (Module: shapes)
@@ -1245,20 +1246,20 @@ void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color);
 void DrawLineBezier(Vector2 startPos, Vector2 endPos, float thick, Color color);
 /// Draw line using quadratic bezier curves with a control point
 void DrawLineBezierQuad(Vector2 startPos, Vector2 endPos, Vector2 controlPos,
-        float thick, Color color);
+    float thick, Color color);
 /// Draw line using cubic bezier curves with 2 control points
 void DrawLineBezierCubic(Vector2 startPos, Vector2 endPos,
-        Vector2 startControlPos, Vector2 endControlPos, float thick, Color color);
+    Vector2 startControlPos, Vector2 endControlPos, float thick, Color color);
 /// Draw lines sequence
 void DrawLineStrip(Vector2* points, int pointCount, Color color);
 /// Draw a color-filled circle
 void DrawCircle(int centerX, int centerY, float radius, Color color);
 /// Draw a piece of a circle
 void DrawCircleSector(Vector2 center, float radius, float startAngle,
-        float endAngle, int segments, Color color);
+    float endAngle, int segments, Color color);
 /// Draw circle sector outline
 void DrawCircleSectorLines(Vector2 center, float radius, float startAngle,
-        float endAngle, int segments, Color color);
+    float endAngle, int segments, Color color);
 /// Draw a gradient-filled circle
 void DrawCircleGradient(int centerX, int centerY, float radius, Color color1, Color color2);
 /// Draw a color-filled circle (Vector version)
@@ -1271,10 +1272,10 @@ void DrawEllipse(int centerX, int centerY, float radiusH, float radiusV, Color c
 void DrawEllipseLines(int centerX, int centerY, float radiusH, float radiusV, Color color);
 /// Draw ring
 void DrawRing(Vector2 center, float innerRadius, float outerRadius,
-        float startAngle, float endAngle, int segments, Color color);
+    float startAngle, float endAngle, int segments, Color color);
 /// Draw ring outline
 void DrawRingLines(Vector2 center, float innerRadius, float outerRadius,
-        float startAngle, float endAngle, int segments, Color color);
+    float startAngle, float endAngle, int segments, Color color);
 /// Draw a color-filled rectangle
 void DrawRectangle(int posX, int posY, int width, int height, Color color);
 /// Draw a color-filled rectangle (Vector version)
@@ -1297,7 +1298,7 @@ void DrawRectangleLinesEx(Rectangle rec, float lineThick, Color color);
 void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color);
 /// Draw rectangle with rounded edges outline
 void DrawRectangleRoundedLines(Rectangle rec, float roundness, int segments,
-        float lineThick, Color color);
+    float lineThick, Color color);
 /// Draw a color-filled triangle (vertex in counter-clockwise order!)
 void DrawTriangle(Vector2 v1, Vector2 v2, Vector2 v3, Color color);
 /// Draw triangle outline (vertex in counter-clockwise order!)
@@ -1312,7 +1313,7 @@ void DrawPoly(Vector2 center, int sides, float radius, float rotation, Color col
 void DrawPolyLines(Vector2 center, int sides, float radius, float rotation, Color color);
 /// Draw a polygon outline of n sides with extended parameters
 void DrawPolyLinesEx(Vector2 center, int sides, float radius, float rotation,
-        float lineThick, Color color);
+    float lineThick, Color color);
 
 // Basic shapes collision detection functions
 /// Check collision between two rectangles
@@ -1329,7 +1330,7 @@ bool CheckCollisionPointCircle(Vector2 point, Vector2 center, float radius);
 bool CheckCollisionPointTriangle(Vector2 point, Vector2 p1, Vector2 p2, Vector2 p3);
 /// Check the collision between two lines defined by two points each, returns collision point by reference
 bool CheckCollisionLines(Vector2 startPos1, Vector2 endPos1, Vector2 startPos2,
-        Vector2 endPos2, Vector2* collisionPoint);
+    Vector2 endPos2, Vector2* collisionPoint);
 /// Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
 bool CheckCollisionPointLine(Vector2 point, Vector2 p1, Vector2 p2, int threshold);
 /// Get collision rectangle for two rectangles collision
@@ -1405,7 +1406,7 @@ void ImageResize(Image* image, int newWidth, int newHeight);
 void ImageResizeNN(Image* image, int newWidth, int newHeight);
 /// Resize canvas and fill with color
 void ImageResizeCanvas(Image* image, int newWidth, int newHeight, int offsetX,
-        int offsetY, Color fill);
+    int offsetY, Color fill);
 /// Compute all mipmap levels for a provided image
 void ImageMipmaps(Image* image);
 /// Dither image data to 16bpp or lower (Floyd-Steinberg dithering)
@@ -1473,7 +1474,7 @@ void ImageDraw(Image* dst, Image src, Rectangle srcRec, Rectangle dstRec, Color 
 void ImageDrawText(Image* dst, const(char*) text, int posX, int posY, int fontSize, Color color);
 /// Draw text (custom sprite font) within an image (destination)
 void ImageDrawTextEx(Image* dst, Font font, const(char*) text, Vector2 position,
-        float fontSize, float spacing, Color tint);
+    float fontSize, float spacing, Color tint);
 
 // Texture loading functions
 // NOTE: These functions require GPU access
@@ -1515,16 +1516,16 @@ void DrawTextureRec(Texture2D texture, Rectangle source, Vector2 position, Color
 void DrawTextureQuad(Texture2D texture, Vector2 tiling, Vector2 offset, Rectangle quad, Color tint);
 /// Draw part of a texture (defined by a rectangle) with rotation and scale tiled into dest.
 void DrawTextureTiled(Texture2D texture, Rectangle source, Rectangle dest,
-        Vector2 origin, float rotation, float scale, Color tint);
+    Vector2 origin, float rotation, float scale, Color tint);
 /// Draw a part of a texture defined by a rectangle with 'pro' parameters
 void DrawTexturePro(Texture2D texture, Rectangle source, Rectangle dest,
-        Vector2 origin, float rotation, Color tint);
+    Vector2 origin, float rotation, Color tint);
 /// Draws a texture (or part of it) that stretches or shrinks nicely
 void DrawTextureNPatch(Texture2D texture, NPatchInfo nPatchInfo, Rectangle dest,
-        Vector2 origin, float rotation, Color tint);
+    Vector2 origin, float rotation, Color tint);
 /// Draw a textured polygon
 void DrawTexturePoly(Texture2D texture, Vector2 center, Vector2* points,
-        Vector2* texcoords, int pointCount, Color tint);
+    Vector2* texcoords, int pointCount, Color tint);
 
 // Color/pixel related functions
 /// Get color with alpha applied, alpha goes from 0.0f to 1.0f
@@ -1567,13 +1568,13 @@ Font LoadFontEx(const(char*) fileName, int fontSize, int* fontChars, int glyphCo
 Font LoadFontFromImage(Image image, Color key, int firstChar);
 /// Load font from memory buffer, fileType refers to extension: i.e. '.ttf'
 Font LoadFontFromMemory(const(char*) fileType, const ubyte* fileData,
-        int dataSize, int fontSize, int* fontChars, int glyphCount);
+    int dataSize, int fontSize, int* fontChars, int glyphCount);
 /// Load font data for further use
 GlyphInfo* LoadFontData(const ubyte* fileData, int dataSize, int fontSize,
-        int* fontChars, int glyphCount, int type);
+    int* fontChars, int glyphCount, int type);
 /// Generate image font atlas using chars info
 Image GenImageFontAtlas(const GlyphInfo* chars, Rectangle** recs,
-        int glyphCount, int fontSize, int padding, int packMethod);
+    int glyphCount, int fontSize, int padding, int packMethod);
 /// Unload font chars info data (RAM)
 void UnloadFontData(GlyphInfo* chars, int glyphCount);
 /// Unload Font from GPU memory (VRAM)
@@ -1586,10 +1587,10 @@ void DrawFPS(int posX, int posY);
 void DrawText(const(char*) text, int posX, int posY, int fontSize, Color color);
 /// Draw text using font and additional parameters
 void DrawTextEx(Font font, const(char*) text, Vector2 position, float fontSize,
-        float spacing, Color tint);
+    float spacing, Color tint);
 /// Draw text using Font and pro parameters (rotation)
 void DrawTextPro(Font font, const(char*) text, Vector2 position, Vector2 origin,
-        float rotation, float fontSize, float spacing, Color tint);
+    float rotation, float fontSize, float spacing, Color tint);
 /// Draw one character (codepoint)
 void DrawTextCodepoint(Font font, int codepoint, Vector2 position, float fontSize, Color tint);
 
@@ -1663,7 +1664,7 @@ void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color);
 void DrawPoint3D(Vector3 position, Color color);
 /// Draw a circle in 3D world space
 void DrawCircle3D(Vector3 center, float radius, Vector3 rotationAxis,
-        float rotationAngle, Color color);
+    float rotationAngle, Color color);
 /// Draw a color-filled triangle (vertex in counter-clockwise order!)
 void DrawTriangle3D(Vector3 v1, Vector3 v2, Vector3 v3, Color color);
 /// Draw a triangle strip defined by points
@@ -1678,10 +1679,10 @@ void DrawCubeWires(Vector3 position, float width, float height, float length, Co
 void DrawCubeWiresV(Vector3 position, Vector3 size, Color color);
 /// Draw cube textured
 void DrawCubeTexture(Texture2D texture, Vector3 position, float width,
-        float height, float length, Color color);
+    float height, float length, Color color);
 /// Draw cube with a region of a texture
 void DrawCubeTextureRec(Texture2D texture, Rectangle source, Vector3 position,
-        float width, float height, float length, Color color);
+    float width, float height, float length, Color color);
 /// Draw sphere
 void DrawSphere(Vector3 centerPos, float radius, Color color);
 /// Draw sphere with extended parameters
@@ -1690,16 +1691,16 @@ void DrawSphereEx(Vector3 centerPos, float radius, int rings, int slices, Color 
 void DrawSphereWires(Vector3 centerPos, float radius, int rings, int slices, Color color);
 /// Draw a cylinder/cone
 void DrawCylinder(Vector3 position, float radiusTop, float radiusBottom,
-        float height, int slices, Color color);
+    float height, int slices, Color color);
 /// Draw a cylinder with base at startPos and top at endPos
 void DrawCylinderEx(Vector3 startPos, Vector3 endPos, float startRadius,
-        float endRadius, int sides, Color color);
+    float endRadius, int sides, Color color);
 /// Draw a cylinder/cone wires
 void DrawCylinderWires(Vector3 position, float radiusTop, float radiusBottom,
-        float height, int slices, Color color);
+    float height, int slices, Color color);
 /// Draw a cylinder wires with base at startPos and top at endPos
 void DrawCylinderWiresEx(Vector3 startPos, Vector3 endPos, float startRadius,
-        float endRadius, int sides, Color color);
+    float endRadius, int sides, Color color);
 /// Draw a plane XZ
 void DrawPlane(Vector3 centerPos, Vector2 size, Color color);
 /// Draw a ray line
@@ -1728,22 +1729,22 @@ BoundingBox GetModelBoundingBox(Model model);
 void DrawModel(Model model, Vector3 position, float scale, Color tint);
 /// Draw a model with extended parameters
 void DrawModelEx(Model model, Vector3 position, Vector3 rotationAxis,
-        float rotationAngle, Vector3 scale, Color tint);
+    float rotationAngle, Vector3 scale, Color tint);
 /// Draw a model wires (with texture if set)
 void DrawModelWires(Model model, Vector3 position, float scale, Color tint);
 /// Draw a model wires (with texture if set) with extended parameters
 void DrawModelWiresEx(Model model, Vector3 position, Vector3 rotationAxis,
-        float rotationAngle, Vector3 scale, Color tint);
+    float rotationAngle, Vector3 scale, Color tint);
 /// Draw bounding box (wires)
 void DrawBoundingBox(BoundingBox box, Color color);
 /// Draw a billboard texture
 void DrawBillboard(Camera camera, Texture2D texture, Vector3 position, float size, Color tint);
 /// Draw a billboard texture defined by source
 void DrawBillboardRec(Camera camera, Texture2D texture, Rectangle source,
-        Vector3 position, Vector2 size, Color tint);
+    Vector3 position, Vector2 size, Color tint);
 /// Draw a billboard texture defined by source and rotation
 void DrawBillboardPro(Camera camera, Texture2D texture, Rectangle source,
-        Vector3 position, Vector3 up, Vector2 size, Vector2 origin, float rotation, Color tint);
+    Vector3 position, Vector3 up, Vector2 size, Vector2 origin, float rotation, Color tint);
 
 // Mesh management functions
 /// Upload mesh vertex data in GPU and provide VAO/VBO ids

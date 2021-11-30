@@ -4,10 +4,10 @@
 	],
 	"copyright": "Copyright © 2021, rc-05",
 	"description": "D bindings to the raylib library.",
-	"lflags": [
-		"-L/usr/lib64/",
-		"/usr/lib64/libraylib.so"
+	"libs-posix": [
+		"raylib"
 	],
 	"license": "MPL-2.0",
-	"name": "dlang_raylib"
+	"name": "dlang_raylib",
+	"targetType": "library"
 }

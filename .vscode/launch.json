@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "gdb",
+            "request": "launch",
+            "target": "sprite_font",
+            "cwd": "${workspaceRoot}/examples/sprite_font",
+            "valuesFormatting": "parseText"
+        }
+    ]
+}

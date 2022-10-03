@@ -9,24 +9,27 @@ import raylib;
 
 void main()
 {
-    InitWindow(640, 480, "SpriteFont demonstration");
-    SetTargetFPS(60);
+	InitWindow(640, 480, "SpriteFont demonstration");
+	SetTargetFPS(60);
 
-    // Resources must be created
-    auto spriteFont = LoadFont("assets/nes_font.png");
+	// Resources must be created
+	auto spriteFont = LoadFont("assets/nes_font.png");
 
-    while (!WindowShouldClose())
-    {
-        BeginDrawing();
-        ClearBackground(Colors.RAYWHITE);
+	while (!WindowShouldClose())
+	{
+		BeginDrawing();
+		ClearBackground(Colors.RAYWHITE);
 
-        DrawTextEx(spriteFont, "This is an example in using a customized font that follows the",
-                Vector2(0, 0), 8, 0, Colors.BLACK);
-        DrawTextEx(spriteFont, "XNA spritefont convention.", Vector2(0, 8), 8, 0, Colors.BLACK);
+		DrawTextEx(spriteFont, "This is an example in using a customized font that follows the",
+			Vector2(0, 0), 8, 0, Colors.BLACK);
+		DrawTextEx(spriteFont, "XNA spritefont convention.", Vector2(0, 8), 8, 0, Colors.BLACK);
 
-        EndDrawing();
-    }
+		DrawTextEx(spriteFont, "I do not know who has created this NES font, but it looks nice!",
+			Vector2(0, 32), 8, 0, Colors.BLACK);
 
-    UnloadFont(spriteFont);
-    CloseWindow();
+		EndDrawing();
+	}
+
+	UnloadFont(spriteFont);
+	CloseWindow();
 }

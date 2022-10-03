@@ -864,6 +864,8 @@ void SetWindowMonitor(int monitor);
 void SetWindowMinSize(int width, int height);
 /// Set window dimensions
 void SetWindowSize(int width, int height);
+/// Set window opacity [0.0f..1.0f] (only PLATFORM_DESKTOP)
+void SetWindowOpacity(float opacity);
 /// Get native window handle
 void* GetWindowHandle();
 /// Get current screen width

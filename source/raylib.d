@@ -1,7 +1,5 @@
 module raylib;
 
-// TODO Insert raylib 4.2 functions
-
 import core.stdc.stdlib;
 import core.stdc.stdarg;
 import core.stdc.config;

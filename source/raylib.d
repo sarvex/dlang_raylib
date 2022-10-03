@@ -1864,6 +1864,8 @@ RayCollision GetRayCollisionQuad(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3, Ve
 // Audio Loading and Playing Functions (Module: audio)
 //------------------------------------------------------------------------------------
 
+alias AudioCallback = void function(void* bufferData, uint frames);
+
 // Audio device management functions
 /// Initialize audio device and context
 void InitAudioDevice();
@@ -1915,6 +1917,8 @@ bool IsSoundPlaying(Sound sound);
 void SetSoundVolume(Sound sound, float volume);
 /// Set pitch for a sound (1.0 is base level)
 void SetSoundPitch(Sound sound, float pitch);
+/// Set pan for a sound (0.5 is center)
+void SetSoundPan(Sound sound, float pan);
 /// Convert wave data to desired format
 void WaveFormat(Wave* wave, int sampleRate, int sampleSize, int channels);
 /// Copy a wave to a new wave
@@ -1951,6 +1955,8 @@ void SeekMusicStream(Music music, float position);
 void SetMusicVolume(Music music, float volume);
 /// Set pitch for a music (1.0 is base level)
 void SetMusicPitch(Music music, float pitch);
+/// Set pan for a music (0.5 is center)
+void SetMusicPan(Music music, float pan);
 /// Get music time length (in seconds)
 float GetMusicTimeLength(Music music);
 /// Get current music time played (in seconds)
@@ -1979,5 +1985,12 @@ void StopAudioStream(AudioStream stream);
 void SetAudioStreamVolume(AudioStream stream, float volume);
 /// Set pitch for audio stream (1.0 is base level)
 void SetAudioStreamPitch(AudioStream stream, float pitch);
+/// Set pan for audio stream (0.5 is center)
+void SetAudioStreamPan(AudioStream stream, float pan);
 /// Default size for new audio streams
 void SetAudioStreamBufferSizeDefault(int size);
+
+/// Attach audio stream processor to stream
+void AttachAudioStreamProcessor(AudioStream stream, AudioCallback processor);
+/// Detach audio stream processor from stream
+void DetachAudioStreamProcessor(AudioStream stream, AudioCallback processor);
